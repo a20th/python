@@ -1,0 +1,58 @@
+TEXT = """3Z 4Z UZ3N37 4Z7 4 C3L7 5Z0LG4LJ4, H0GY B3B1Z0NY1754
+M1LY3N C50D4L4705 D0LG0KR4 K3P35 4Z 3LM3.
+3LK3P35Z70 D0LG0KR4! N3H3Z V0L7 3L05Z0R 3L0LV45N0D
+3Z7, D3 M1R3 1D33R5Z 3HH3Z 4 50RH0Z, 4Z 3LM3D
+4U70M471KU54N 3L 7UDJ4 0LV45N1.
+4N3LKUL H0GY G0ND0LK0DN0D K3LL3N3 R4J74.
+L3GY BU5ZK3! C54K K3V35 3MB3R K3P35 3L0LV45N1 3Z7.
+H4 7375Z377, 05ZD M3G M450KK4L 15!"""
+
+
+TEXT2 = """Cbcq Dgyk!
+
+Dmeybh kce cew yrwyg hmrylyaqmr:
+rylsjb kce y Nwrfml npmepykmxyqg lwcjtcr!
+
+Aqmimjjyi:
+
+Ynyb
+"""
+
+def szorzat(l):
+    a = 1
+    for i in l:
+        a *= i
+    return a
+
+def csodalatos(t: str):
+    return t.replace("3", "E").replace("4", "A").replace("7", "T").replace("0", "O").replace("5", "S").replace("1", "I")
+
+def valami_1(i):
+    return i in ["y", "Y", "yes"]
+    # return i[0].lower() == y
+
+def rejtelyes(s):
+    t = ""
+    for c in s:
+        i = ord(c)  
+        if i == 89:
+            i = 65
+        elif i == 90:
+            i = 66
+        elif i == 121:
+            i = 97
+        elif i == 122:
+            i = 98
+        elif i >= 65 and i <= 90 or i >= 97 and i <= 122:
+            i += 2
+        t += chr(i)
+    return t
+
+def main():
+    print(szorzat([1, 2, 3, 4]))
+    print(csodalatos(TEXT))
+    print(valami_1("y"))
+    print(rejtelyes(TEXT2))
+
+if __name__ == "__main__":
+    main()
