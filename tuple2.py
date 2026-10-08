@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+
+import math
+
+
+def distance(p1, p2):
+    return math.sqrt(abs(p1[0] - p2[0])**2 + abs(p1[1] - p2[1])**2)
+    
+
+
+def main():
+    p1 = (1, 2)
+    p2 = (6, 5)
+    print('A ket pont kozti tavolsag:', round(distance(p1, p2), 2))
+
+#############################################################################
+
+if __name__ == "__main__":
+    main()
