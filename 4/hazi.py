@@ -31,6 +31,9 @@ def valami_1(i):
     return i in ["y", "Y", "yes"]
     # return i[0].lower() == y
 
+def clean(s:str):
+    a = s.split()
+    return "".join(a)
 def rejtelyes(s):
     t = ""
     for c in s:
@@ -52,6 +55,8 @@ def main():
     print(szorzat([1, 2, 3, 4]))
     print(csodalatos(TEXT))
     print(valami_1("y"))
+    print(clean("192.20.246.138:\n 6666"))
+    print(clean("206.130.99.82:\n8080"))
     print(rejtelyes(TEXT2))
 
 if __name__ == "__main__":
